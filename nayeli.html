@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Antojos Judith | Venta de Postres</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff8f8;
+    color:#333;
+}
+
+/* ENCABEZADO */
+header{
+    background:linear-gradient(135deg,#8b0000,#d81b60,#d4af37);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    font-size:42px;
+}
+
+header p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* MENU */
+nav{
+    background:#222;
+    text-align:center;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+/* INICIO */
+.hero{
+    min-height:430px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://media.gourmetdemexico.com.mx/2024/02/fresas-con-crema-1024x678.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h2{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 25px;
+    background:#d4af37;
+    color:#222;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* SECCIONES */
+section{
+    padding:50px 8%;
+}
+
+.titulo{
+    text-align:center;
+    color:#8b0000;
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+/* FILTROS */
+.filtros{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.filtros button{
+    border:none;
+    background:#8b0000;
+    color:white;
+    padding:10px 18px;
+    margin:5px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.filtros button:hover{
+    background:#d4af37;
+    color:#222;
+}
+
+/* PRODUCTOS */
+.productos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.producto{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.producto:hover{
+    transform:translateY(-7px);
+}
+
+.producto img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+    text-align:center;
+}
+
+.info h3{
+    color:#8b0000;
+    margin-bottom:10px;
+}
+
+.precio{
+    color:#c49b20;
+    font-size:22px;
+    font-weight:bold;
+    margin:12px;
+}
+
+.btn{
+    border:none;
+    background:#8b0000;
+    color:white;
+    padding:11px 18px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#d4af37;
+    color:#222;
+}
+
+/* CARRITO */
+#carrito{
+    background:#222;
+    color:white;
+    max-width:900px;
+    margin:40px auto;
+    border-radius:20px;
+}
+
+#carrito .titulo{
+    color:#ffd700;
+}
+
+.item-carrito{
+    background:#333;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+}
+
+.cantidad button{
+    border:none;
+    padding:5px 10px;
+    margin:5px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.eliminar{
+    float:right;
+    background:#d81b60;
+    color:white;
+    border:none;
+    padding:7px 10px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.total{
+    text-align:right;
+    font-size:25px;
+    color:#ffd700;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.botones-carrito{
+    text-align:center;
+    margin-top:25px;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:5px;
+}
+
+.vaciar{
+    background:#666;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+/* CONTACTO */
+.contacto{
+    text-align:center;
+    font-size:18px;
+    line-height:2;
+}
+
+/* FOOTER */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+footer span{
+    color:#ffd700;
+}
+
+/* CELULAR */
+@media(max-width:600px){
+
+    header h1{
+        font-size:30px;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:5px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ENCABEZADO -->
+
+<header>
+
+<h1>🍰 Antojos Judith 🍓</h1>
+
+<p>Deliciosos postres hechos con amor</p>
+
+</header>
+
+
+<!-- MENU -->
+
+<nav>
+
+<a href="#inicio">Inicio</a>
+
+<a href="#productos">Productos</a>
+
+<a href="#carrito">🛒 Carrito</a>
+
+<a href="#contacto">Contacto</a>
+
+</nav>
+
+
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+
+<div>
+
+<h2>Bienvenidos a Antojos Judith</h2>
+
+<p>
+Disfruta nuestros deliciosos postres,
+helados y jugos naturales.
+</p>
+
+<a href="#productos" class="boton">
+Ver productos
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- PRODUCTOS -->
+
+<section id="productos">
+
+<h2 class="titulo">
+Nuestros Productos
+</h2>
+
+
+<div class="filtros">
+
+<button onclick="filtrar('todos')">
+Todos
+</button>
+
+<button onclick="filtrar('postre')">
+Postres
+</button>
+
+<button onclick="filtrar('helado')">
+Helados
+</button>
+
+<button onclick="filtrar('jugo')">
+Jugos
+</button>
+
+</div>
+
+
+
+<div class="productos">
+
+
+<!-- FRESAS -->
+
+<div class="producto postre">
+
+<img
+src="https://media.gourmetdemexico.com.mx/2024/02/fresas-con-crema-1024x678.jpg"
+alt="Fresas con crema">
+
+<div class="info">
+
+<h3>🍓 Fresas con Crema</h3>
+
+<p>
+Fresas frescas con deliciosa crema.
+</p>
+
+<div class="precio">
+Bs. 10
+</div>
+
+<button class="btn"
+onclick="agregar('Fresas con Crema',10)">
+Agregar al carrito
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- TORTA -->
+
+<div class="producto postre">
+
+<img
+src="https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/chcocolate_cake.jpg"
+alt="Torta de chocolate">
+
+<div class="info">
+
+<h3>🍫 Torta de Chocolate</h3>
+
+<p>
+Suave y deliciosa torta de chocolate.
+</p>
+
+<div class="precio">
+Bs. 15
+</div>
+
+<button class="btn"
+onclick="agregar('Torta de Chocolate',15)">
+Agregar al carrito
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- DONAS -->
+
+<div class="producto postre">
+
+<img
+src="https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/frosted_chocolate_donut.jpg"
+alt="Donas">
+
+<div class="info">
+
+<h3>🍩 Donas</h3>
+
+<p>
+Donas suaves con deliciosa cobertura.
+</p>
+
+<div class="precio">
+Bs. 7
+</div>
+
+<button class="btn"
+onclick="agregar('Donas',7)">
+Agregar al carrito
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- BROWNIE -->
+
+<div class="producto postre">
+
+<img
+src="https://www.hola.com/horizon/original_aspect_ratio/138790b3fff9-brownie-age-a.jpg?im=Resize%3D%28960%29"
+alt="Brownie">
+
+<div class="info">
+
+<h3>🍫 Brownie</h3>
+
+<p>
+Brownie de chocolate suave y delicioso.
+</p>
+
+<div class="precio">
+Bs. 8
+</div>
+
+<button class="btn"
+onclick="agregar('Brownie',8)">
+Agregar al carrito
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- HELADO -->
+
+<div class="producto helado">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Ice_cream_Cup.jpg"
+alt="Helado">
+
+<div class="info">
+
+<h3>🍦 Helado</h3>
+
+<p>
+Delicioso helado para disfrutar.
+</p>
+
+<div class="precio">
+Bs. 6
+</div>
+
+<button class="btn"
+onclick="agregar('Helado',6)">
+Agregar al carrito
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- JUGO -->
+
+<div class="producto jugo">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Orangejuice.jpg"
+alt="Jugo natural">
+
+<div class="info">
+
+<h3>🍊 Jugo Natural</h3>
+
+<p>
+Jugo natural de naranja fresco.
+</p>
+
+<div class="precio">
+Bs. 8
+</div>
+
+<button class="btn"
+onclick="agregar('Jugo Natural',8)">
+Agregar al carrito
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- CARRITO -->
+
+<section id="carrito">
+
+<h2 class="titulo">
+🛒 Mi Carrito
+</h2>
+
+<div id="listaCarrito">
+
+<p>
+Tu carrito está vacío.
+</p>
+
+</div>
+
+
+<div class="total">
+
+Total: Bs.
+<span id="total">0</span>
+
+</div>
+
+
+<div class="botones-carrito">
+
+<button
+class="whatsapp"
+onclick="enviarWhatsApp()">
+
+📱 Enviar pedido por WhatsApp
+
+</button>
+
+
+<button
+class="vaciar"
+onclick="vaciarCarrito()">
+
+🗑️ Vaciar carrito
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACTO -->
+
+<section id="contacto">
+
+<h2 class="titulo">
+Contacto
+</h2>
+
+<div class="contacto">
+
+<p>📱 WhatsApp: 74446790</p>
+
+<p>📧 antojosjudith@gmail.com</p>
+
+<p>📍 Sucre - Bolivia</p>
+
+<p>🍰 Antojos Judith</p>
+
+</div>
+
+</section>
+
+
+
+<!-- PIE -->
+
+<footer>
+
+<p>
+© 2026 <span>Antojos Judith</span>
+</p>
+
+<p>
+Venta de deliciosos postres
+</p>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   CARRITO
+========================= */
+
+let carrito = [];
+
+
+/* AGREGAR */
+
+function agregar(nombre,precio){
+
+let producto = carrito.find(
+p => p.nombre === nombre
+);
+
+if(producto){
+
+producto.cantidad++;
+
+}else{
+
+carrito.push({
+
+nombre:nombre,
+
+precio:precio,
+
+cantidad:1
+
+});
+
+}
+
+mostrarCarrito();
+
+document.getElementById("carrito")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* MOSTRAR */
+
+function mostrarCarrito(){
+
+let lista =
+document.getElementById("listaCarrito");
+
+let total = 0;
+
+lista.innerHTML = "";
+
+
+if(carrito.length === 0){
+
+lista.innerHTML =
+"<p>Tu carrito está vacío.</p>";
+
+document.getElementById("total")
+.innerText="0";
+
+return;
+
+}
+
+
+carrito.forEach((producto,index)=>{
+
+let subtotal =
+producto.precio * producto.cantidad;
+
+total += subtotal;
+
+
+lista.innerHTML += `
+
+<div class="item-carrito">
+
+<strong>
+${producto.nombre}
+</strong>
+
+<br><br>
+
+Precio: Bs. ${producto.precio}
+
+<br>
+
+<div class="cantidad">
+
+Cantidad:
+
+<button
+onclick="cambiarCantidad(${index},-1)">
+−
+</button>
+
+${producto.cantidad}
+
+<button
+onclick="cambiarCantidad(${index},1)">
++
+</button>
+
+</div>
+
+Subtotal:
+<strong>
+Bs. ${subtotal}
+</strong>
+
+<button
+class="eliminar"
+onclick="eliminar(${index})">
+
+❌
+
+</button>
+
+</div>
+
+`;
+
+});
+
+
+document.getElementById("total")
+.innerText=total;
+
+}
+
+
+/* CAMBIAR CANTIDAD */
+
+function cambiarCantidad(index,cambio){
+
+carrito[index].cantidad += cambio;
+
+if(carrito[index].cantidad <= 0){
+
+carrito.splice(index,1);
+
+}
+
+mostrarCarrito();
+
+}
+
+
+/* ELIMINAR */
+
+function eliminar(index){
+
+carrito.splice(index,1);
+
+mostrarCarrito();
+
+}
+
+
+/* VACIAR */
+
+function vaciarCarrito(){
+
+carrito=[];
+
+mostrarCarrito();
+
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+function enviarWhatsApp(){
+
+if(carrito.length===0){
+
+alert(
+"Tu carrito está vacío. Agrega algún producto primero."
+);
+
+return;
+
+}
+
+
+let mensaje =
+"🍰 PEDIDO - ANTOJOS JUDITH 🍰\n\n";
+
+let total=0;
+
+
+carrito.forEach(producto=>{
+
+let subtotal =
+producto.precio * producto.cantidad;
+
+total += subtotal;
+
+
+mensaje +=
+"🛍️ " +
+producto.nombre +
+"\nCantidad: " +
+producto.cantidad +
+"\nPrecio: Bs. " +
+producto.precio +
+"\nSubtotal: Bs. " +
+subtotal +
+"\n\n";
+
+});
+
+
+mensaje +=
+"💰 *TOTAL: Bs. " +
+total +
+"*\n\n";
+
+mensaje +=
+"Hola, quiero realizar este pedido. 😊";
+
+
+/*
+CAMBIA ESTE NÚMERO
+POR EL WHATSAPP QUE RECIBIRÁ
+LOS PEDIDOS.
+*/
+
+let numeroWhatsApp =
+"59174446790";
+
+
+let url =
+"https://wa.me/" +
+numeroWhatsApp +
+"?text=" +
+encodeURIComponent(mensaje);
+
+
+window.open(url,"_blank");
+
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+function filtrar(categoria){
+
+let productos =
+document.querySelectorAll(".producto");
+
+
+productos.forEach(producto=>{
+
+if(categoria==="todos"){
+
+producto.style.display="block";
+
+}
+
+else if(
+producto.classList.contains(categoria)
+){
+
+producto.style.display="block";
+
+}
+
+else{
+
+producto.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
